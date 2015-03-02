@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+@import "compass/css3";
+
+@import 'scss/helpers/variables';  
+
+@import 'scss/base/reset'; 
+@import 'scss/base/function';
+
+@import 'scss/components/ui';
+@import 'scss/components/search';
+@import 'scss/components/list';
+
+@import 'scss/layout/header';
+@import 'scss/layout/footer';
+
+/*列表页面
+------------------------------------------------------------------------------------------*/
+.list-pic li{
+	padding: 20px 0;
+	border-bottom: 1px solid #f0f0f0;
+}
+.rjfl{
+	width: 545px;
+	h3{
+		padding-bottom: 10px;
+		font-family: $f-ff1;
+		font-size: 16px;
+	}
+	.cont-fl{
+		width: 402px;
+	}
+	.lh{
+		line-height: 18px;
+		color: #999;
+	}
+	.cr{
+		padding-top: 10px;
+		span{
+			margin-right: 20px;
+		}
+	} 
+	.btn{
+		display: block;
+		@include size(123px,35px);
+		text-indent: -99999px;
+		background: url(../images/btn.gif) no-repeat;
+	}
+
+}
+
+// 页码
+#pages {width: 100%;overflow: hidden;text-align: center;margin:50px 0; }
+#pages a {background: #f6f6f6;border: 1px solid #dcdcdc;height: 28px;line-height: 28px;padding: 0 10px;display: inline-block;color:#000;font-family: 'microsoft yahei';
+margin:0 5px;border-radius: 5px;font-size: 13px;}
+#pages a:hover,#pages a:active,#pages a.on {background: #ed5f00;border-color: #ed5f00;color: #fff;text-decoration: none;}
+#pages input {border-radius: 5px;height: 28px;line-height: 28px;border:1px #dcdcdc solid;text-align: center;font-size: 13px;font-weight: bold;}
+#pages input.pageGo {background: #ed5f00;font-size: 12px;font-weight: bold;color: #fff;font-family: 'Arial';border: none;padding: 0 5px;cursor: pointer;}
+#pages span {margin:0 10px 0 5px;}

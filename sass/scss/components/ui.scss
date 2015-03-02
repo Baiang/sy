@@ -1,0 +1,322 @@
+@charset "utf-8";
+/*组件通用公共样式
+------------------------------------------------------------------------------------------*/
+
+/*----皮肤----*/
+.s-fc-ed{color: #ed5f00;}
+.s-fc-555{color: #555;}
+.s-fc-999{color: #999;}
+.s-bg-e3{background: #e3e3e3;}
+
+/*状态*/
+.g-bd{
+    position: relative;
+    z-index: 1;
+}
+.z-juzhon{width: 1000px; margin: 0 auto;}
+
+/*水平文字链接列表 */
+.m-list1{line-height:23px;}
+.m-list1 ul{margin-left:-10px;}
+.m-list1 li{float:left;padding-left:10px;}
+.m-list1 a,.m-list1 a:hover{text-decoration:none;color:#333;}
+
+/* 带点文字链接列表-默认方点 */
+.m-list2{padding-top:1px;line-height:1.5;}
+.m-list2 ul{margin-top:-6px;}
+.m-list2 li{position:relative;padding-left:10px;margin-top:5px;zoom:1;height: 24px;line-height: 24px;overflow: hidden;}
+.m-list2 li a:link,.m-list2 li a:visited {color:#555;}
+.m-list2 li a:hover,.m-list2 li a:active {color:#ed5f00;}
+.m-list2 li i.dot{position:absolute;top:52%;left:0;width:0;overflow:hidden;height:1px;margin-top:-3px;border:1px solid #555;}
+.m-list2-lg{font-size:14px;}
+
+/* 标题文本-默认大小继承 */
+.u-tt{font-family:'microsoft yahei',sans-serif;}
+.u-tt-sm{font-size:12px;}
+.u-tt-md{font-size:14px;}
+.u-tt-lg{font-size:16px;}
+.u-tt-xl{font-size:18px;}
+
+/* 文本型圆角背景导航 */
+.m-nav,.m-nav li,.m-nav li a,.m-nav .corner{height:46px;line-height:46px;}
+.m-nav,.m-nav li,.m-nav .corner{background:#0068b7 no-repeat -9999px -9999px;}
+.m-nav{position:relative;text-align:center;font-size:0;letter-spacing:-0.307em;*letter-spacing:normal;*word-spacing:-1px;color:#fff;background-repeat:repeat-x;
+  background-position:0 0;border-radius: 3px;}
+.m-nav li,.m-nav li a{display:inline-block;*display:inline;*zoom:1;}
+.m-nav li{padding:0 0 0 1px;font-size:14px;letter-spacing:normal;word-spacing:normal;background-position:0 -150px;}
+.m-nav li.first{background:none;}
+.m-nav li a,.m-nav li a:hover{text-decoration:none;color:#fff;}
+.m-nav li a{padding:0 45px; font-size: 18px; font-family: "微软雅黑";}
+/*新闻列表*/
+.m-newsMin{width: 323px;}
+.m-newsMin .hr{position: relative;  height: 40px; background: #0068b7 url(../images/hr.png) no-repeat 15px 8px; line-height: 40px; color: #fff;}
+.m-newsMin .hr span{ padding-left: 44px;}
+.m-newsMin .hr a{position: absolute; right: 15px; top: 13px; color: #fff; line-height: normal; }
+.m-newsMin .m-list2{border: 1px solid #e3e3e3; padding: 15px;}
+
+// 列表
+
+%tab-lst{
+    height: 32px;
+    background: $c-e7e7e7;
+    border-top: 2px solid $c-0068b7;
+}
+
+%first-lst{
+    margin: 0 10px 0 15px;
+    font: #{$fs16}/32px #{$f-ff1};
+    _display: inline;
+}
+
+%absolute-a{
+	position: absolute;
+    right: 15px;
+    top: 8px;
+    
+}
+
+// 选项卡头部分
+.u-tab{
+    width: 100%;
+    @at-root .tab-tr{
+        position: relative;
+       @extend %tab-lst;
+        li{
+            float: left;
+            // margin: 4px 5px 0 0;
+            margin-top: 4px;
+            margin-right: 5px;
+            font-size: $fs14;
+            a{
+                @include inline-block;
+                @include lh(25px);
+                padding: 0 5px;
+            }
+        }
+        .z-current{
+            background: $c-fff;
+            border-bottom: 2px solid $c-ed5f00;
+        }
+    }
+    .first{
+        margin-left: $ml15;
+        display: inline;
+    }
+    .tr-first{
+        @extend %first-lst;
+    }
+    .notLi{
+        position: absolute;
+        right: 15px;
+        .not{
+            font-size: 12px;
+            color: #777;
+        }   
+    }
+    .tab-list{
+        height: 169px;
+        border: $b-all;
+    }
+    .tab-list-2{
+        padding: 0 25px 25px;
+        border: $b-all;
+        @at-root .tab-list-ul{
+            li{
+                float: left;
+                overflow: hidden;
+                width: 200px;
+                height: 166px;
+                margin: 20px 25px 0 0;
+            }
+            h3,p{
+                // font-size: 12px;
+                @include lh(20px);
+            }
+            a{display: block; font-family: $f-ff1; font-size: 14px; font-weight: normal;} 
+        }
+    }
+}
+
+// 新闻列表
+.u-lst{
+    width: $w325;
+    @at-root .lst-tr{
+        @extend %tab-lst;
+        position: relative;
+        span{
+            @extend %first-lst;
+        }
+        a{
+           @extend %absolute-a;
+            color: $c-777;
+        }
+    }
+     @at-root .lst-list{
+        height: 155px;
+        padding: 14px 14px 0;
+        border: $b-all;
+        li{
+            @include lh(24px);
+            padding-left: $pl15;
+            background: url(../images/lst.png) no-repeat 0 center;
+        }
+        .classify{
+            margin-right: $ml15;
+            color: $c-333;
+        }
+        .tit{
+            color: $c-777;
+        }
+    }
+    @at-root .lst-list-2{
+    	padding: 14px 16px;
+    	border: $b-all;
+    	.lst-list-2-1{
+    		overflow: hidden;
+    		position: relative;
+    		height: 119px;
+    	}
+    	ul{
+    		position: absolute;
+    		left: 0;
+    		top: 0;
+    	}
+    	li{
+    		width: 130px;
+    		float: left;
+    		margin-right: 10px;
+    	}
+    	.list-img{
+    		display: block;
+    		@include size(124px,91px);
+    		padding: 2px;
+    		border: $b-all;
+    		&:hover{
+    			border: $b-all-hover;
+    		}
+    	}
+    	p{
+    		padding-top: 8px;
+    		text-align: center;
+    		a{
+    			color: $c-0068b7;
+    		}
+    	}
+    }
+}
+
+.software-tr{
+	position: relative;
+	height: 34px;
+	background: $c-ed5f00;
+	span{
+		 @extend %first-lst;
+		 color: $c-fff;
+	}
+	a{
+		 @extend %absolute-a;
+		 top: 10px;
+		color: $c-fff;
+	}
+}
+.software-list{
+	border: $b-all-1;
+	height: 311px;
+	padding: 15px;
+	li{
+		float: left;
+		width: 70px;
+		margin: 0 29px 15px 0;
+	}
+	@at-root .software-img img{
+		@include size(70px);
+		@include border-radius(5px);
+		background: $c-c3c3c3;
+	}
+	@at-root .software-p{
+		padding-top: 8px;
+		text-align: center;
+		a{
+			color: $c-777;
+		}
+	}
+}
+
+.m-content{
+    margin-top: $mt15;
+}
+
+
+// 图片列表
+.gup-lst{
+    .lst-list{
+        height: 221px;
+        border-top: none;
+    }
+}
+.gup-lst-tr{
+    overflow: hidden;
+    height: 75px;
+    border: $b-all;
+    border-bottom: 1px dashed #ccc;
+}
+.gup-lst-tr-r{
+    width: 172px;
+    padding-left: 15px;
+    .gup-lst-tr-r-a{
+        color: #000;
+        font-size: 14px;
+        font-family: $f-ff1;
+    }
+    p{
+        padding-top: 10px;
+        line-height: 20px;
+        color: $c-999;
+    }
+}
+
+// 链接
+.m-link .link{margin-top: 15px; padding: 10px; border: 1px solid #e3e3e3;}
+.m-link .link a{font-size: 16px; font-family: "微软雅黑"}
+.link-2{margin: 15px 0 20px; padding: 15px 0 12px 25px; border: 1px solid #e3e3e3;}
+.link-2 a{margin-right: 32px; float: left;}
+.m-link p{
+    color: #303030;
+    font-size: 14px;
+    font-family: $f-ff1;
+}
+
+/* myplayer */
+div#myplayer { border:1px #cccccc solid; clear:both;  background:#ffffff; clear:both; height:290px;}
+
+ul.mylist { width:100%; text-align:left;font-size:12px; }
+ul.mylist li { padding:1px 0; line-height:24px;height:24px; border-top:1px #efefef solid; }
+ul.mylist li.on { background:#efefef;}
+ul.mylist li a,ul.mylist li a:link,ul.myllist li a:visited{ padding:0px 6px 0px 30px; overflow:hidden; line-height:24px;height:24px;display:block;  background:url(Images/Vico.jpg) no-repeat 6px 6px; text-decoration:none; color:#666666;}
+ul.mylist li a:hover{ color:#cc0000; background:#efefef url(Images/Vico.jpg) no-repeat 6px 6px; }
+
+div#CuPlayer { width:425px;float:left;margin-left:5px;margin-top:10px;}
+div.list { width:270px;float:left;margin-top:10px;}
+
+div.list dl img{ width:70px;height:50px; float:left;}
+div.list dl strong { display:block; width:190px;float:left; padding-left:8px;}
+div.list dl span { display:block; width:190px;float:left; padding-left:8px;}
+
+div.list dl dt { width:270px;float:left; }
+div.list dl dt a { display:block; line-height:18px;padding-top:10px;  border-bottom:1px #cccccc solid; 
+ height:65px; padding-top:10px; color:#333; font-size:12px; text-decoration:none; }
+div.list dl dt a:hover{  height:65px; padding-top:10px;  text-decoration:none; background:#efefef; }
+
+// 软件下载
+.rd-list{
+    .l{
+        float: left;
+    }
+    .r{
+        float: left;
+        padding-left: 18px;
+        p{
+            padding-top: 10px;
+        }
+    }
+}

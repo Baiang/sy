@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+@import "compass/css3";
+
+@import 'scss/helpers/variables';  
+
+@import 'scss/base/reset'; 
+@import 'scss/base/function';
+
+@import 'scss/components/ui';
+@import 'scss/components/search';
+@import 'scss/components/list';
+
+@import 'scss/layout/header';
+@import 'scss/layout/footer';
+
+/*炒股软件
+------------------------------------------------------------------------------------------*/
+.m-recommend{
+	.rd-list{
+		border:$b-all;
+		padding-bottom:15px;
+		li{
+			float: left;
+			width: 218px;
+			margin-top: 15px;
+			padding-left: 15px;
+		}
+	}
+	@at-root .lst-tr i{
+		position: absolute;
+		display: block;
+		left: 15px;
+		top: 4px;
+		background: url(../images/tool.png) no-repeat;
+	}
+	@at-root .bgtr-1{
+		i{
+			
+			@include size(49px, 24px);
+			background-position: 0 -349px;
+		}
+		span{
+			margin-left: 74px;
+		}
+	}
+	@at-root .bgtr-2{
+		i{
+			@include size(27px,24px);
+			background-position: 0 -397px;
+		}
+		span{
+			margin-left: 53px;
+		}
+	}
+	@at-root .bgtr-3{
+		i{
+			@include size(16px, 23px);
+			background-position: 0 -444px;
+		}
+		span{
+			margin-left: 53px;
+		}
+	}
+}
+
+.software-list{
+	border: $b-all;
+}
+
+// 下载排行榜
+.ranking-li{width: 224px; float: left; margin-right: 15px;}
+.ranking-list{width: 224px;}
+.ranking-lst a{
+	float: left;
+	margin-left: 10px;
+}
+.ranking-lst {
+	border: $b-all;
+	padding-top: 15px;
+	li{
+		padding: 0 0 8px 15px;
+		@include lh(18px);
+	}
+	span{
+		float: left;
+		display: block;
+		@include size(18px);
+		text-align: center;
+		line-height: 18px;
+		background: #aeaeae;
+		color: #fff;
+		border-radius: 3px;
+	}
+	.ranking{
+		background: #ff7200;
+	}
+}
+
+
+// 幻灯片
+
+.js {
+	width: 90%;
+	margin: 10px auto 0 auto;
+}
+
+.js p {
+	padding: 5px 0;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+.js p span {
+	float: right;
+}
+
+.js p span a {
+	color: #f00;
+	text-decoration: underline;
+}
+
+.js textarea {
+	height: 100px;
+	width: 98%;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-top: 2px solid #aaa;
+	border-left: 2px solid #aaa;
+}
+
+.foucebox {
+	position: relative;
+	width: 703px;
+	height: 300px;
+	overflow: hidden;
+}
+
+.foucebox .bd {
+	position: relative;
+	float: left;
+	width: 589px;
+	height: 300px;
+	overflow: hidden;
+}
+
+.foucebox .bd img {
+	width: 589px;
+	height: 300px;
+}
+
+.foucebox .hd {
+	position: relative;
+	width: 110px;
+	float: right;
+	padding-right: 4px;
+	z-index: 1;
+}
+
+.foucebox .hd ul {
+	position: relative;
+	width: 110px;
+	overflow: hidden;
+}
+
+.foucebox .hd li {
+	height: 50px;
+	padding: 5px;
+	overflow: hidden;
+}
+
+.foucebox .hd img {
+	width: 110px;
+	height: 50px;
+	display: block;
+}
+
+.foucebox .hoverBg {
+	position: absolute;
+	top: 0;
+	left: -10px;
+	width: 124px;
+	height: 64px;
+	z-index: 100;
+	background: url(../images/hover.png) no-repeat;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/hover.png);
+	_background: none;
+}	
